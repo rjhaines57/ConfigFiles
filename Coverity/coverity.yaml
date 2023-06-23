@@ -1,0 +1,14 @@
+capture:
+  build:
+    build_command: "mvn install -DskipTests"
+    clean_command: "mvn clean"
+
+  security-da: false
+
+analyze:
+  location: local
+
+commit:
+  connect:
+    stream: <STREAM NAME>
+    url: <COVERITY URL>
