@@ -1,0 +1,15 @@
+{
+  "type": "Coverity configuration",
+  "format_version": 1,
+  "format_minor_version" : 7,
+  "settings": {
+    "stream": "<stream name>",
+    "cov_run_desktop": {
+        "build_cmd": ["make","-j","4"],
+        "clean_cmd": ["make","clean" ]
+    },
+  "ide": {"build_strategy": "CUSTOM"}
+  }
+}
+
+

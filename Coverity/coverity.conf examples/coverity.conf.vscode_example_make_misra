@@ -1,0 +1,15 @@
+{
+  "type": "Coverity configuration",
+  "format_version": 1,
+  "format_minor_version" : 7,
+  "settings": {
+  "stream": "<stream_name>",
+  "cov_run_desktop": {
+        "build_cmd": ["make"],
+        "clean_cmd": ["make","clean" ],
+        "coding_standard_configs": ["$(code_base_dir)/misrac2012-required-only.config"]
+  },
+  
+  "ide": {"build_strategy": "CUSTOM"}
+  }
+}

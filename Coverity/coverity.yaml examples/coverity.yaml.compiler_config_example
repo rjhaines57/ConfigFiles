@@ -1,0 +1,17 @@
+commit:
+  connect:
+    stream: hello_world
+    url: <URL>
+
+# Adds compiler for i586-poky-linux-gcc
+capture:
+  compiler-configuration:
+    cov-configure: 
+      - [ "--comptype" ,"gcc" , "--compiler" , "i586-poky-linux-gcc", "--template" ]
+      - [ "--comptype" ,"g++" , "--compiler" , "i586-poky-linux-g++", "--template" ]
+  build:
+    clean-command: make clean
+    build-command: make 
+
+analyze:
+  location: local

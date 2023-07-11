@@ -1,0 +1,16 @@
+commit:
+  connect:
+    stream: hello_world
+    url: <URL>
+
+# Adds compiler for i586-poky-linux-gcc
+capture:
+  compiler-configuration:
+    cov-configure: 
+      - [ "--gcc", "--xml-option=skip_file:.*hello_world.c.*" ]
+  build:
+    clean-command: make clean
+    build-command: make 
+
+analyze:
+  location: local

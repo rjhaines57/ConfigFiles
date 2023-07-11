@@ -1,0 +1,15 @@
+include `C/C++`;
+
+checker {
+    name = "DONT_CALL_WCSCPY";
+    reports = for call in globalset allFunctionCode % functionCall {
+        .calledFunction.mangledName == "wcscpy" 
+    } : {
+        events = [
+            {
+                description = "Calling " + call.calledExpression + " This function is considered unsafe. Please use alternative functions instead.";
+                location = call.location;
+            }
+        ];
+    };
+};
